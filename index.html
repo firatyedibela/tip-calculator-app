@@ -30,8 +30,8 @@
       <div class="calculator">
         <div class="calculator__form-half">
           <form action="" class="calculator__form">
-            <div calculator__form-field>
-              <label for="bill-price">Bill</label>
+            <div class="calculator__form-field">
+              <label for="bill-price" class="calculator__label">Bill</label>
               <div class="calculator__input-container">
                 <input
                   type="number"
@@ -46,8 +46,10 @@
                 />
               </div>
             </div>
-            <div class="calculator__form-field">
-              <label for="custom-tip">Select Tip %</label>
+            <div class="calculator__form-field calculator__form-field--tip">
+              <label for="custom-tip" class="calculator__label"
+                >Select Tip %</label
+              >
               <div class="calculator__tip-options">
                 <button class="calculator__tip-option-btn" data-tip-rate="5">
                   5%
@@ -67,13 +69,15 @@
                 <input
                   type="number"
                   id="custom-tip"
-                  placeholder="custom"
+                  placeholder="Custom"
                   class="calculator__input calculator__input--custom"
                 />
               </div>
             </div>
             <div class="calculator__form-field">
-              <label for="people">Number of people</label>
+              <label for="people" class="calculator__label"
+                >Number of people</label
+              >
               <div class="calculator__input-container">
                 <input
                   type="number"
@@ -83,7 +87,7 @@
                 />
                 <img
                   src="./images/icon-person.svg"
-                  class="calculator__input-logo"
+                  class="calculator__input-logo calculator__input-logo--person"
                   alt="Person logo"
                 />
               </div>

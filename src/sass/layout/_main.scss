@@ -1,0 +1,97 @@
+@use '../abstracts/variables' as *;
+
+.main {
+  display: flex;
+  justify-content: center;
+}
+
+.calculator {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  padding: 32px;
+  border-radius: 25px;
+  background-color: white;
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  &__form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  &__form-field--tip {
+    gap: 16px;
+  }
+
+  &__label {
+    font-size: 16px;
+    font-weight: bold;
+    color: $dark-grayish-cyan;
+  }
+
+  &__input-container {
+    position: relative;
+  }
+
+  &__input {
+    text-align: right;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: inherit;
+    color: $very-dark-cyan;
+    padding: 6px 16px;
+    height: 48px;
+
+    background-color: #f3f9fa;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+  }
+
+  &__input::placeholder {
+    opacity: 0.35;
+    color: inherit;
+  }
+
+  &__input--custom::placeholder {
+    opacity: 1;
+    color: hsl(180%, 18%, 40%);
+  }
+
+  &__input-logo {
+    width: 10px;
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+  }
+
+  &__input-logo--person {
+    width: 13px;
+  }
+
+  &__tip-options {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 16px;
+    row-gap: 14px;
+  }
+
+  &__tip-option-btn {
+    font-family: inherit;
+    background-color: $very-dark-cyan;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 6px 14px;
+  }
+}
