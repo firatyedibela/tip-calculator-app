@@ -1,9 +1,17 @@
+@use './typography';
+@use '../abstracts/variables' as *;
+
 *,
 *::after,
 *::before {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+
+body {
+  font-family: 'Space Mono', Arial, Helvetica, sans-serif;
+  background-color: $light-grayish-cyan;
 }
 
 img {
