@@ -19,7 +19,7 @@ This is a solution to the [Tip calculator app challenge on Frontend Mentor](http
 
 ### Links
 
-- Solution URL: [GitHub Repository](https://github.com/firatyedibela/time-tracking-dashboard)
+- Solution URL: [GitHub Repository](https://github.com/firatyedibela/tip-calculator-app)
 - Live Site URL: [Live Site](https://time-tracking-dashboard-one-mocha.vercel.app)
 
 ## My process

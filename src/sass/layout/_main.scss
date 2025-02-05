@@ -202,6 +202,17 @@
     text-transform: uppercase;
     font-family: inherit;
     border-radius: 5px;
+    pointer-events: none;
+
+    &--active {
+      pointer-events: all;
+      background-color: $strong-cyan;
+      opacity: 1;
+
+      &:hover {
+        background-color: #9fe8df;
+      }
+    }
   }
 }
 

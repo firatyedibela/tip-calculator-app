@@ -16,6 +16,15 @@ export const calculatorDOM = (function () {
     document.querySelector(
       '#total-display'
     ).textContent = `$${totalPerPerson.toFixed(2)}`;
+
+    activateResetButton();
+  }
+
+  function resetApp() {
+    resetResults();
+    resetForm();
+
+    deactivateResetButton();
   }
 
   function renderErrorMsg(inputElement) {
@@ -34,6 +43,37 @@ export const calculatorDOM = (function () {
     document.querySelectorAll('.tip-option').forEach((option) => {
       option.classList.remove('tip-option-selected');
     });
+  }
+
+  function activateResetButton() {
+    const btn = document.querySelector('.calculator__reset-btn');
+    btn.classList.add('calculator__reset-btn--active');
+    btn.addEventListener('click', resetApp);
+  }
+
+  function deactivateResetButton() {
+    const btn = document.querySelector('.calculator__reset-btn');
+    btn.classList.remove('calculator__reset-btn--active');
+  }
+
+  function resetForm() {
+    document.querySelector('#bill').value = '';
+    document.querySelector('#people').value = '';
+
+    const customTip = document.querySelector('#custom-tip');
+    customTip.value = '';
+
+    const tipOptions = Array.from(document.querySelectorAll('.tip-option'));
+    const selectedTipOption = tipOptions.find((option) =>
+      option.classList.contains('tip-option-selected')
+    );
+
+    selectedTipOption.classList.remove('tip-option-selected');
+  }
+
+  function resetResults() {
+    document.querySelector('#tip-display').textContent = '$0.00';
+    document.querySelector('#total-display').textContent = '$0.00';
   }
 
   return {
