@@ -1,6 +1,6 @@
-# Frontend Mentor - Time tracking dashboard solution
+# Frontend Mentor - Tip calculator app solution
 
-This is a solution to the [Tip calculator app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/time-tracking-dashboard-UIQ7167Jw). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
+This is a solution to the [Tip calculator app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/tip-calculator-app-ugJNGbJUX). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
 ## Table of contents
 
@@ -15,12 +15,12 @@ This is a solution to the [Tip calculator app challenge on Frontend Mentor](http
 
 ### Screenshot
 
-![](./design/desktop-design.jpg)
+![](./design/active-states.jpg)
 
 ### Links
 
 - Solution URL: [GitHub Repository](https://github.com/firatyedibela/tip-calculator-app)
-- Live Site URL: [Live Site](https://time-tracking-dashboard-one-mocha.vercel.app)
+- Live Site URL: [Live Site](https://tip-calculator-app-pi-seven.vercel.app)
 
 ## My process
 
