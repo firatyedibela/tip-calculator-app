@@ -31,11 +31,14 @@
         <div class="calculator__form-half">
           <form action="" class="calculator__form">
             <div class="calculator__form-field">
-              <label for="bill-price" class="calculator__label">Bill</label>
+              <label for="bill" class="calculator__label">Bill</label>
+              <span class="calculator__error-msg" id="bill-error"
+                >Can't be zero</span
+              >
               <div class="calculator__input-container">
                 <input
                   type="number"
-                  id="bill-price"
+                  id="bill"
                   placeholder="0"
                   class="calculator__input"
                 />
@@ -51,32 +54,56 @@
                 >Select Tip %</label
               >
               <div class="calculator__tip-options">
-                <button class="calculator__tip-option-btn" data-tip-rate="5">
+                <button
+                  type="button"
+                  class="calculator__tip-option-btn tip-option"
+                  data-value="5"
+                >
                   5%
                 </button>
-                <button class="calculator__tip-option-btn" data-tip-rate="10">
+                <button
+                  type="button"
+                  class="calculator__tip-option-btn tip-option"
+                  data-value="10"
+                >
                   10%
                 </button>
-                <button class="calculator__tip-option-btn" data-tip-rate="15">
+                <button
+                  type="button"
+                  class="calculator__tip-option-btn tip-option"
+                  data-value="15"
+                >
                   15%
                 </button>
-                <button class="calculator__tip-option-btn" data-tip-rate="25">
+                <button
+                  type="button"
+                  class="calculator__tip-option-btn tip-option"
+                  data-value="25"
+                >
                   25%
                 </button>
-                <button class="calculator__tip-option-btn" data-tip-rate="50">
+                <button
+                  type="button"
+                  class="calculator__tip-option-btn tip-option"
+                  data-value="50"
+                >
                   50%
                 </button>
                 <input
                   type="number"
                   id="custom-tip"
                   placeholder="Custom"
-                  class="calculator__input calculator__input--custom"
+                  class="calculator__input calculator__input--custom tip-option"
+                  min="0"
                 />
               </div>
             </div>
             <div class="calculator__form-field">
               <label for="people" class="calculator__label"
                 >Number of people</label
+              >
+              <span class="calculator__error-msg" id="people-error"
+                >Can't be zero</span
               >
               <div class="calculator__input-container">
                 <input
@@ -95,22 +122,19 @@
           </form>
         </div>
         <div class="calculator__display-half">
-          <div class="calculator__display-field">
-            <p class="calculator__display-type">
-              Tip Amount <span>/ person</span>
-            </p>
-            <p class="calculator__display-value" data-display-type="tip-amount">
-              $0.00
-            </p>
-          </div>
-          <div class="calculator__display-field">
-            <p class="calculator__display-type">Total <span>/ person</span></p>
-            <p
-              class="calculator__display-value"
-              data-display-type="total-amount"
-            >
-              $0.00
-            </p>
+          <div class="calculator__display-value-container">
+            <div class="calculator__display-field">
+              <p class="calculator__display-type">
+                Tip Amount <span>/ person</span>
+              </p>
+              <p class="calculator__display-value" id="tip-display">$0.00</p>
+            </div>
+            <div class="calculator__display-field">
+              <p class="calculator__display-type">
+                Total <span>/ person</span>
+              </p>
+              <p class="calculator__display-value" id="total-display">$0.00</p>
+            </div>
           </div>
           <button class="calculator__reset-btn">Reset</button>
         </div>

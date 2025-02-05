@@ -17,12 +17,14 @@
     display: flex;
     flex-direction: column;
     gap: 40px;
+    max-width: 380px;
   }
 
   &__form-field {
     display: flex;
     flex-direction: column;
     gap: 6px;
+    position: relative;
   }
 
   &__form-field--tip {
@@ -45,13 +47,18 @@
     font-weight: bold;
     font-family: inherit;
     color: $very-dark-cyan;
-    padding: 6px 16px;
     height: 48px;
-
+    width: 100%;
     background-color: #f3f9fa;
     border: none;
     outline: none;
     border-radius: 5px;
+    padding: 0 6px;
+    caret-color: $strong-cyan;
+
+    &:focus {
+      border: 2px solid $strong-cyan;
+    }
   }
 
   &__input::placeholder {
@@ -59,9 +66,21 @@
     color: inherit;
   }
 
+  &__input--custom {
+    max-width: 118px;
+    opacity: 1;
+    color: $very-dark-cyan;
+    text-align: right;
+
+    &.tip-option-selected {
+      border: 2px solid $strong-cyan;
+    }
+  }
+
   &__input--custom::placeholder {
     opacity: 1;
-    color: hsl(180%, 18%, 40%);
+    color: #547878;
+    text-align: center;
   }
 
   &__input-logo {
@@ -74,6 +93,19 @@
 
   &__input-logo--person {
     width: 13px;
+  }
+
+  &__error-msg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-weight: bold;
+    color: #e17457;
+    display: none;
+
+    &--active {
+      display: block;
+    }
   }
 
   &__tip-options {
@@ -93,5 +125,73 @@
     border: none;
     border-radius: 5px;
     padding: 6px 14px;
+    transition: background-color 150ms;
+
+    &:hover:not(.tip-option-selected) {
+      background-color: #9fe8df;
+      color: $very-dark-cyan;
+    }
+  }
+
+  &__tip-option-btn.tip-option-selected {
+    background-color: $strong-cyan;
+    color: $very-dark-cyan;
+  }
+
+  &__display-half {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: $very-dark-cyan;
+    padding: 40px;
+    border-radius: 15px;
+    height: 100%;
+  }
+
+  &__display-value-container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  &__display-field {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 333px;
+  }
+
+  &__display-type {
+    color: white;
+    font-weight: bold;
+
+    span {
+      font-size: 13px;
+      font-weight: bold;
+      color: $grayish-cyan;
+      display: block;
+    }
+  }
+
+  &__display-value {
+    font-size: 48px;
+    font-weight: bold;
+    color: $strong-cyan;
+  }
+
+  &__reset-btn {
+    width: 100%;
+    border: none;
+    opacity: 0.35;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    color: $very-dark-cyan;
+    background-color: #0d686d;
+    padding-top: 9px;
+    padding-bottom: 9px;
+    text-transform: uppercase;
+    font-family: inherit;
+    border-radius: 5px;
   }
 }
