@@ -16,8 +16,15 @@ export const handlers = (function () {
     }
   }
 
+  function handleInputKeyDown(e) {
+    if (e.key === 'Enter' && formValidator.validate()) {
+      calculatorDOM.renderResults(formValidator.formData);
+    }
+  }
+
   return {
     handleInputChange,
     handleOptionBtnClick,
+    handleInputKeyDown,
   };
 })();

@@ -9,6 +9,7 @@ const tipOptionButtons = document.querySelectorAll(
 
 inputs.forEach((input) => {
   input.addEventListener('blur', handlers.handleInputChange);
+  input.addEventListener('keydown', handlers.handleInputKeyDown);
 });
 
 tipOptionButtons.forEach((option) => {
