@@ -8,3 +8,10 @@
     width: 86px;
   }
 }
+
+@media (max-width: 720px) {
+  .header {
+    padding-top: 4rem;
+    margin-bottom: 2.4rem;
+  }
+}
