@@ -1,3 +1,7 @@
 @use './base/reset';
 @use './layout/header';
 @use './layout/main';
+@use './components/calculator';
+@use './components/form';
+@use './components/inputs';
+@use './components/display';

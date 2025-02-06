@@ -1,0 +1,22 @@
+.calculator {
+  display: flex;
+  align-items: center;
+  max-width: 920px;
+  height: 480px;
+  flex-grow: 1;
+  gap: 48px;
+  padding: 32px 32px 32px 48px;
+  border-radius: 25px;
+  background-color: white;
+}
+
+@media (max-width: 720px) {
+  .calculator {
+    flex-direction: column;
+    max-width: 375px;
+    height: auto;
+    border-radius: 25px 25px 0 0;
+    padding: 32px 24px;
+    gap: 32px;
+  }
+}

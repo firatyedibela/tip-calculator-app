@@ -1,0 +1,69 @@
+@use '../abstracts/variables' as *;
+
+.calculator {
+  &__input-container {
+    position: relative;
+  }
+
+  &__input {
+    text-align: right;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: inherit;
+    color: $very-dark-cyan;
+    height: 48px;
+    width: 100%;
+    background-color: #f3f9fa;
+    border: 2px solid transparent;
+    outline: none;
+    border-radius: 5px;
+    padding: 0 12px;
+    caret-color: $strong-cyan;
+    transition: all 300ms;
+
+    &:focus {
+      border: 2px solid $strong-cyan;
+    }
+
+    &::placeholder {
+      opacity: 0.35;
+      color: inherit;
+    }
+  }
+
+  &__input--custom {
+    max-width: 118px;
+    opacity: 1;
+    color: $very-dark-cyan;
+    text-align: right;
+    padding: 0;
+
+    &.tip-option-selected {
+      border: 2px solid $strong-cyan;
+    }
+
+    &::placeholder {
+      opacity: 1;
+      color: #547878;
+      text-align: center;
+    }
+  }
+
+  &__input-logo {
+    width: 11px;
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+  }
+
+  &__input-logo--person {
+    width: 13px;
+  }
+}
+
+@media (max-width: 840px) {
+  .calculator__input--custom {
+    font-size: 1rem;
+  }
+}

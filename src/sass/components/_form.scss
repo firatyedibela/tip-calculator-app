@@ -1,0 +1,44 @@
+@use '../abstracts/variables' as *;
+
+.calculator {
+  &__form-half {
+    max-width: 380px;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    flex: 1;
+  }
+
+  &__form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    position: relative;
+  }
+
+  &__form-field--tip {
+    gap: 16px;
+  }
+
+  &__label {
+    font-size: 16px;
+    font-weight: bold;
+    color: $dark-grayish-cyan;
+  }
+
+  &__error-msg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-weight: bold;
+    color: #e17457;
+    display: none;
+
+    &--active {
+      display: block;
+    }
+  }
+}
