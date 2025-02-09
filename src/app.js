@@ -1,24 +1,19 @@
 /* -----DEVELOP BRANCH----- */
-
-import { calculatorDOM } from './modules/dom';
 import { handlers } from './modules/handlers';
 
 const inputs = document.querySelectorAll('.calculator__input');
 const customTipInput = document.querySelector('.calculator__input--custom');
-const tipOptionButtons = document.querySelectorAll(
-  '.calculator__tip-option-btn'
-);
+const radioTipOptions = document.querySelectorAll('.calculator__radio');
 
 inputs.forEach((input) => {
-  input.addEventListener('blur', handlers.handleInputChange);
+  input.addEventListener('blur', handlers.handleInputBlur);
   input.addEventListener('keydown', handlers.handleInputKeyDown);
 });
 
-tipOptionButtons.forEach((option) => {
+radioTipOptions.forEach((option) => {
   option.addEventListener('click', handlers.handleOptionBtnClick);
 });
 
 customTipInput.addEventListener('click', (e) => {
-  calculatorDOM.resetSelectedOption();
   e.target.classList.add('tip-option-selected');
 });

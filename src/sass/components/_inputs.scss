@@ -29,6 +29,11 @@
       opacity: 0.35;
       color: inherit;
     }
+
+    &--error,
+    &--error:focus {
+      border: 2px solid #e17052;
+    }
   }
 
   &__input--custom {
@@ -65,5 +70,14 @@
 @media (max-width: 840px) {
   .calculator__input--custom {
     font-size: 1rem;
+  }
+}
+
+@media (max-width: 720px) {
+  .calculator {
+    &__input--custom {
+      max-width: 100%;
+      font-size: 1.5rem;
+    }
   }
 }

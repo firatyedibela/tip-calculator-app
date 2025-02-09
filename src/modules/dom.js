@@ -27,22 +27,23 @@ export const calculatorDOM = (function () {
     deactivateResetButton();
   }
 
-  function renderErrorMsg(inputElement) {
+  function renderErrorState(inputElement) {
+    inputElement.classList.add('calculator__input--error');
+
     document
       .querySelector(`#${inputElement.id}-error`)
       .classList.add('calculator__error-msg--active');
+
+    console.log('deactivating reset button');
+    deactivateResetButton();
   }
 
-  function removeErrorMsg(inputElement) {
+  function removeErrorState(inputElement) {
+    inputElement.classList.remove('calculator__input--error');
+
     document
       .querySelector(`#${inputElement.id}-error`)
       .classList.remove('calculator__error-msg--active');
-  }
-
-  function resetSelectedOption() {
-    document.querySelectorAll('.tip-option').forEach((option) => {
-      option.classList.remove('tip-option-selected');
-    });
   }
 
   function activateResetButton() {
@@ -63,12 +64,15 @@ export const calculatorDOM = (function () {
     const customTip = document.querySelector('#custom-tip');
     customTip.value = '';
 
-    const tipOptions = Array.from(document.querySelectorAll('.tip-option'));
-    const selectedTipOption = tipOptions.find((option) =>
-      option.classList.contains('tip-option-selected')
+    const radioTipOptions = Array.from(
+      document.querySelectorAll('.calculator__radio')
     );
-
-    selectedTipOption.classList.remove('tip-option-selected');
+    const selectedRadioOption = radioTipOptions.find(
+      (button) => button.checked
+    );
+    if (selectedRadioOption) {
+      selectedRadioOption.checked = false;
+    }
   }
 
   function resetResults() {
@@ -78,8 +82,7 @@ export const calculatorDOM = (function () {
 
   return {
     renderResults,
-    renderErrorMsg,
-    removeErrorMsg,
-    resetSelectedOption,
+    renderErrorState,
+    removeErrorState,
   };
 })();

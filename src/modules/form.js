@@ -12,29 +12,32 @@ export const formValidator = (function () {
     const isBillValid = validateBill();
     const isPeopleValid = validatePeople();
 
+    console.log(isBillValid && isPeopleValid && isTipValid);
+
     return isBillValid && isPeopleValid && isTipValid;
   }
 
   function validateTip() {
-    const tipOptionButtons = Array.from(
-      document.querySelectorAll('.calculator__tip-option-btn')
+    const radioTipOptions = Array.from(
+      document.querySelectorAll('.calculator__radio')
     );
-    const tipOptionInput = document.querySelector(
+    const customTipOptionInput = document.querySelector(
       '.calculator__input--custom '
     );
 
-    const selectedButton = tipOptionButtons.find((button) =>
-      button.classList.contains('tip-option-selected')
-    );
+    const selectedRadioOption = radioTipOptions.find((radio) => radio.checked);
 
-    if (selectedButton) {
-      formData.tip = Number(selectedButton.dataset.value);
-    } else if (
-      tipOptionInput.classList.contains('tip-option-selected') &&
-      tipOptionInput.value !== '' &&
-      Number(tipOptionInput.value) >= 0
+    if (
+      customTipOptionInput.classList.contains('tip-option-selected') &&
+      customTipOptionInput.value !== '' &&
+      Number(customTipOptionInput.value) >= 0
     ) {
-      formData.tip = Number(tipOptionInput.value);
+      formData.tip = Number(customTipOptionInput.value);
+      if (selectedRadioOption) {
+        selectedRadioOption.checked = false;
+      }
+    } else if (selectedRadioOption) {
+      formData.tip = Number(selectedRadioOption.value);
     } else {
       return false;
     }
@@ -65,10 +68,10 @@ export const formValidator = (function () {
     if (inputElement.value === '') {
       return false;
     } else if (Number(inputElement.value) === 0) {
-      calculatorDOM.renderErrorMsg(inputElement);
+      calculatorDOM.renderErrorState(inputElement);
       return false;
     } else {
-      calculatorDOM.removeErrorMsg(inputElement);
+      calculatorDOM.removeErrorState(inputElement);
       return true;
     }
   }

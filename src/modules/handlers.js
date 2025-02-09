@@ -2,15 +2,17 @@ import { calculatorDOM } from './dom';
 import { formValidator } from './form';
 
 export const handlers = (function () {
-  function handleInputChange() {
+  function handleInputBlur() {
     if (formValidator.validate()) {
       calculatorDOM.renderResults(formValidator.formData);
     }
   }
 
   function handleOptionBtnClick(e) {
-    calculatorDOM.resetSelectedOption();
-    e.target.classList.add('tip-option-selected');
+    document
+      .querySelector('.calculator__input--custom')
+      .classList.remove('tip-option-selected');
+
     if (formValidator.validate()) {
       calculatorDOM.renderResults(formValidator.formData);
     }
@@ -22,9 +24,14 @@ export const handlers = (function () {
     }
   }
 
+  function resetSelectedOption(tipOptions) {
+    tipOptions.forEach((option) => (option.checked = false));
+  }
+
   return {
-    handleInputChange,
+    handleInputBlur,
     handleOptionBtnClick,
     handleInputKeyDown,
+    resetSelectedOption,
   };
 })();
